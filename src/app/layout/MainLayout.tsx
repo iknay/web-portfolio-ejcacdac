@@ -5,7 +5,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-background">
       <TopNavbar />
-      <div className="flex justify-center w-full">{children}</div>
+      {children}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import Logo from "@/public/icons/logo.svg";
-import { NavbarLang } from "@/src/lib/lang/NavbarLang";
+import { NavbarLang } from "@/src/lib/Lang";
 import Image from "next/image";
 
 const TopNavbar = () => {
@@ -11,7 +11,7 @@ const TopNavbar = () => {
           <a
             key={item.label}
             href={item.href}
-            className="font-medium text-lg glass-card h-fit px-5 py-4"
+            className="border border-transparent rounded-2xl font-medium text-lg glass-card h-fit px-5 py-4 transition-all duration-300 font-archivo"
           >
             {item.label}
           </a>

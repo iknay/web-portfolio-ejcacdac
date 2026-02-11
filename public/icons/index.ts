@@ -1,0 +1,6 @@
+export { default as Behance } from "./behance.svg";
+export { default as ButtonTriangle } from "./button-triangle.svg";
+export { default as Figma } from "./figma.svg";
+export { default as Instagram } from "./instagram.svg";
+export { default as LinkedIn } from "./linked-in.svg";
+export { default as Logo } from "./logo.svg";
