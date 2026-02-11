@@ -5,18 +5,18 @@
 
 :root {
   --background: #010001;
-  --foreground: #dbdbdb;
+  --foreground: #ffffff;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: #dbdbdb;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --accent: #0088ff;
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
@@ -201,4 +201,11 @@
     transparent,
     rgba(255, 255, 255, 0.3)
   );
+}
+
+.gradient-border {
+  border: 6px solid transparent;
+  background:
+    linear-gradient(#222, #222) padding-box,
+    linear-gradient(to right, #0088fe, #00c2d3) border-box;
 }

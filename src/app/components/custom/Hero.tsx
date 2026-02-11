@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="relative w-full">
+    <div className="relative w-full pb-20">
       <div className="relative w-full">
         <Image
           src={ErvinJohn}
