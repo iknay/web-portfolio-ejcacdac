@@ -11,7 +11,7 @@ const TopNavbar = () => {
           <a
             key={item.label}
             href={item.href}
-            className="border border-transparent rounded-2xl font-medium text-lg glass-card h-fit px-5 py-4 transition-all duration-300 font-archivo"
+            className="border border-transparent rounded-2xl font-medium text-lg h-fit px-5 py-4 transition-all duration-300 font-archivo"
           >
             {item.label}
           </a>

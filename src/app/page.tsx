@@ -7,8 +7,12 @@ export default function Home() {
   return (
     <MainLayout>
       <Hero />
-      <AboutMe />
-      <Works />
+      <section id="about">
+        <AboutMe />
+      </section>
+      <section id="works">
+        <Works />
+      </section>
     </MainLayout>
   );
 }

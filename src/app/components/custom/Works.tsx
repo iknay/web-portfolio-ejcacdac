@@ -82,6 +82,17 @@ const Works = () => {
         </p>
       </div>
 
+      <div className="font-archivo text-center flex flex-col gap-8 justify-center w-full mb-16 py-20">
+        <p className="text-7xl font-semibold">Important Note!</p>
+        <p className="font-medium">
+          My most recent projects were primarily internal tools and are not
+          included in this public portfolio. <br /> I’d be happy to walk you
+          through these projects in person or through a call upon request.
+        </p>
+        <p className="font-poppins text-3xl">
+          Send me an invite at ervinjohn.cacdac@gmail.com
+        </p>
+      </div>
       <div className="grid justify-items-center gap-16">
         {WorkItems.map(({ firstContent, secondContent }, index) => (
           <PixelTransition

@@ -4,11 +4,11 @@ import { Athletica, Doon, Medsgo, TixGenie, TravelGuru } from "@/public/images";
 export const NavbarLang = [
   {
     label: "Works",
-    href: "/works",
+    href: "#works",
   },
   {
     label: "About",
-    href: "/about",
+    href: "#about",
   },
   {
     label: "Contact Me",

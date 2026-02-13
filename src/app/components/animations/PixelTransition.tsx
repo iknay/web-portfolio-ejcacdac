@@ -6,7 +6,7 @@ import { useIsTouchDevice } from "../../hooks/useIsTouchDevice";
 
 interface PixelTransitionProps {
   firstContent: React.ReactNode | string;
-  secondContent: React.ReactNode | string;
+  secondContent?: React.ReactNode | string;
   gridSize?: number;
   pixelColor?: string;
   animationStepDuration?: number;
@@ -14,6 +14,7 @@ interface PixelTransitionProps {
   className?: string;
   style?: CSSProperties;
   aspectRatio?: string;
+  disableAnimation?: boolean;
 }
 
 const PixelTransition: React.FC<PixelTransitionProps> = ({
@@ -26,6 +27,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
   aspectRatio = "40%",
   className = "",
   style = {},
+  disableAnimation = false,
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const pixelGridRef = useRef<HTMLDivElement | null>(null);
@@ -36,7 +38,11 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
 
   const isTouchDevice = useIsTouchDevice();
 
+  const shouldAnimate = !disableAnimation && secondContent;
+
   useEffect(() => {
+    if (!shouldAnimate) return;
+
     const pixelGridEl = pixelGridRef.current;
     if (!pixelGridEl) return;
 
@@ -123,7 +129,6 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
       className={`
         ${className}
         gradient-border
-        bg-[#222]
         text-white
         rounded-[15px]
         max-w-[80vw]
