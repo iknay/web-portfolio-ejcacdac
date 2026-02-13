@@ -3,3 +3,8 @@ export { default as Doon } from "./doon.png";
 export { default as Medsgo } from "./medsgo.png";
 export { default as TravelGuru } from "./travelguru.png";
 export { default as TixGenie } from "./tixgenie.png";
+export { default as AthleticaPage } from "./athletica-page.svg";
+export { default as DoonPage } from "./doon-page.svg";
+export { default as MedsgoPage } from "./medsgo-page.svg";
+export { default as TravelGuruPage } from "./travel-guru-page.svg";
+export { default as TixGeniePage } from "./tixgenie-page.svg";

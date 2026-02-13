@@ -34,6 +34,7 @@ export const SocialMediaLang = [
 export const WorksLang = [
   {
     title: "Athletica - GYM Booking App",
+    href: "/athletica",
     bgColor: "#0088FE",
     img: Athletica,
     details: [
@@ -46,6 +47,7 @@ export const WorksLang = [
   },
   {
     title: "Doon - Peer to peer Car Rental",
+    href: "/doon",
     bgColor: "#BCEB02",
     textColor: "#696969",
     img: Doon,
@@ -60,6 +62,7 @@ export const WorksLang = [
   },
   {
     title: "MedsGo - Pharmacy App",
+    href: "/medsgo",
     bgColor: "#203C64",
     textColor: "#66BC01",
     sparkleColor: "#F9414D",
@@ -74,6 +77,7 @@ export const WorksLang = [
   },
   {
     title: "Travelguru - Booking Application",
+    href: "/travelguru",
     bgColor: "#FFFFFF",
     textColor: "#262161",
     img: TravelGuru,
@@ -87,7 +91,8 @@ export const WorksLang = [
   },
   {
     title: "TixGenie - Ticket Selling App",
-    bgColor: "#FFFFFF",
+    href: "/tixgenie",
+    bgColor: "#1E2630",
     textColor: "#31E1BB",
     img: TixGenie,
     details: ["Personal Project", "Case Study", "UI/UX Design"],

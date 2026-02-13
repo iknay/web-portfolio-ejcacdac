@@ -23,7 +23,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
   pixelColor = "currentColor",
   animationStepDuration = 0.3,
   once = false,
-  aspectRatio = "41%",
+  aspectRatio = "40%",
   className = "",
   style = {},
 }) => {
@@ -93,7 +93,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
 
     delayedCallRef.current = gsap.delayedCall(animationStepDuration, () => {
       activeEl.style.display = activate ? "block" : "none";
-      activeEl.style.pointerEvents = activate ? "none" : "";
+      activeEl.style.pointerEvents = activate ? "auto" : "none";
     });
 
     gsap.to(pixels, {
@@ -126,7 +126,7 @@ const PixelTransition: React.FC<PixelTransitionProps> = ({
         bg-[#222]
         text-white
         rounded-[15px]
-        max-w-full
+        max-w-[80vw]
         relative
         overflow-hidden
       `}

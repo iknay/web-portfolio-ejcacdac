@@ -5,3 +5,4 @@ export { default as Instagram } from "./instagram.svg";
 export { default as LinkedIn } from "./linked-in.svg";
 export { default as Logo } from "./logo.svg";
 export { default as Sparkles } from "./sparkles.svg";
+export { default as NextButton } from "./next-button.svg";

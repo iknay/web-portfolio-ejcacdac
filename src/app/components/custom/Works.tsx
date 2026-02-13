@@ -1,11 +1,12 @@
-import React from "react";
 import PixelTransition from "../animations/PixelTransition";
 import { WorksLang } from "@/src/lib/Lang";
 import Image from "next/image";
 import { HiSparkles } from "react-icons/hi";
+import Link from "next/link";
+import { NextButton } from "@/public/icons";
 
 const WorkItems = WorksLang.map(
-  ({ title, bgColor, textColor, sparkleColor, img, details }, index) => ({
+  ({ title, href, bgColor, textColor, sparkleColor, img, details }, index) => ({
     firstContent: (
       <div key={index}>
         <Image src={img} alt={title} className="w-full h-auto" />
@@ -14,11 +15,11 @@ const WorkItems = WorksLang.map(
     secondContent: (
       <div
         key={index}
-        className="flex flex-col justify-center w-full h-full items-center bg-[#111111]"
+        className="flex flex-col justify-center w-full h-full items-center bg-[#111111] gap-8 font-poppins"
       >
         <h2
           className={
-            "text-[56px] font-semibold mb-8 px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2"
+            "text-[56px] font-semibold px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2"
           }
           style={{ background: bgColor, color: textColor }}
         >
@@ -47,6 +48,13 @@ const WorkItems = WorksLang.map(
               </div>
             ))}
         </div>
+        <Link
+          href={href}
+          className="flex w-full gap-4 items-center justify-center cursor-pointer text-3xl font-medium italic"
+        >
+          Click to view{" "}
+          <Image src={NextButton} alt="Next Button" className="size-16" />
+        </Link>
       </div>
     ),
   }),
@@ -62,7 +70,7 @@ const Works = () => {
         </p>
       </div>
 
-      <div className="flex flex-col gap-16">
+      <div className="grid justify-items-center gap-16">
         {WorkItems.map(({ firstContent, secondContent }, index) => (
           <PixelTransition
             key={index}
