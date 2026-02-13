@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Archivo, Poppins } from "next/font/google";
 import "./globals.css";
+import { ViewportProvider } from "./providers/ViewportProvider";
+import DesktopOnlyWarning from "./components/custom/DesktopOnlyWarning";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -28,7 +30,10 @@ export default function RootLayout({
       <body
         className={`${archivo.variable} ${poppins.variable} font-poppins antialiased`}
       >
-        {children}
+        <ViewportProvider>
+          {children}
+          <DesktopOnlyWarning />
+        </ViewportProvider>
       </body>
     </html>
   );
