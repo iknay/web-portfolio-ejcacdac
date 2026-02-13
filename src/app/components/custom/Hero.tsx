@@ -5,11 +5,14 @@ import ErvinJohn from "@/public/ErvinJohn.svg";
 import Role from "./cards/Role";
 import BookNow from "./cards/BookNow";
 import { SocialMediaLang } from "@/src/lib/Lang";
-import { motion, Transition } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { DownButton } from "@/public/icons";
+import { useScrollThreshold } from "../../hooks/useScrollThreshold";
 
 const Hero = () => {
+  const hasScrolled = useScrollThreshold({ threshold: 250 });
+
   return (
     <div className="grid w-full justify-items-center">
       <div className="relative w-full">
@@ -22,7 +25,7 @@ const Hero = () => {
           <div className="absolute left-[20%] -translate-x-1/2 top-[15%]">
             <Role />
           </div>
-          <div className="absolute right-[21%] translate-x-1/2  bottom-10 translate-y-1/2">
+          <div className="absolute right-[21%] translate-x-1/2 bottom-10 translate-y-1/2">
             <BookNow />
           </div>
         </div>
@@ -43,23 +46,37 @@ const Hero = () => {
           ))}
         </div>
       </div>
-      <motion.button
-        animate={{ y: -20 }}
-        transition={
-          {
-            ease: "linear",
-            duration: 1,
-            repeat: Infinity,
-            type: "spring",
-            damping: 10,
-            repeatType: "reverse",
-          } as Transition
-        }
-        className="mt-12"
-      >
-        <p className="italic text-xs">Scroll down</p>
-        <Image src={DownButton} alt="Down Button" className="size-16 mt-3" />
-      </motion.button>
+
+      <AnimatePresence>
+        {!hasScrolled && (
+          <motion.button
+            initial={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            animate={{ y: -20 }}
+            transition={
+              {
+                y: {
+                  ease: "linear",
+                  duration: 1,
+                  repeat: Infinity,
+                  type: "spring",
+                  damping: 10,
+                  repeatType: "reverse",
+                },
+                opacity: { duration: 0.3 },
+              } as any
+            }
+            className="mt-12"
+          >
+            <p className="italic text-xs">Scroll down</p>
+            <Image
+              src={DownButton}
+              alt="Down Button"
+              className="size-16 mt-3"
+            />
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

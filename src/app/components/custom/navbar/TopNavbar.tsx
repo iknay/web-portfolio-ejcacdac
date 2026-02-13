@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const TopNavbar = () => {
   return (
-    <header className="flex w-full justify-between px-12 py-6 sticky top-0 z-50">
+    <header className="flex w-full justify-between px-12 py-6">
       <Image src={Logo} alt="Logo" sizes="100%" className="w-14 h-8" />
       <div className="flex gap-6 h-full">
         {NavbarLang.map((item) => (
