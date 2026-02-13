@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <MainLayout>
       <Hero />
-      <section id="about">
+      <section id="about" className="pt-20">
         <AboutMe />
       </section>
       <section id="works">

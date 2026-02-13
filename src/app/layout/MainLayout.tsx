@@ -5,7 +5,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="min-h-screen bg-background">
       <TopNavbar />
-      <div className="flex flex-col px-12 pb-20 gap-40">{children}</div>
+      <div className="flex flex-col px-12 pb-20 gap-20">{children}</div>
     </div>
   );
 };
