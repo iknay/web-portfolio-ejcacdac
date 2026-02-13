@@ -4,6 +4,7 @@ import Image from "next/image";
 import { HiSparkles } from "react-icons/hi";
 import Link from "next/link";
 import { NextButton } from "@/public/icons";
+import TextPressure from "../animations/TextPressure";
 
 const WorkItems = WorksLang.map(
   ({ title, href, bgColor, textColor, sparkleColor, img, details }, index) => ({
@@ -64,7 +65,18 @@ const Works = () => {
   return (
     <div>
       <div className="flex flex-col gap-4 mb-12 w-full text-center">
-        <p className="text-9xl font-bold font-archivo">Gallery</p>
+        <TextPressure
+          text="GALLERY"
+          flex
+          alpha={false}
+          stroke
+          width
+          weight
+          italic
+          textColor="#ffffff"
+          strokeColor="#0088FE"
+          minFontSize={36}
+        />
         <p className="font-poppins font-medium text-5xl">
           See some of my work.
         </p>
