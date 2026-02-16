@@ -22,7 +22,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
         <TopNavbar />
       </motion.div>
 
-      <div className="flex flex-col px-12 pb-20 gap-20">{children}</div>
+      <div className="flex flex-col px-12 pb-20 gap-36">{children}</div>
 
       <AnimatePresence>
         {showBottomNav && (
@@ -31,7 +31,7 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="fixed bottom-8 left-0 right-0 z-50"
+            className="fixed bottom-8 w-fit -translate-x-1/2 left-1/2 z-50"
           >
             <BottomNavbar />
           </motion.div>

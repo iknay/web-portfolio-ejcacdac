@@ -19,7 +19,7 @@ export const NavbarLang = [
   },
   {
     label: "Contact Me",
-    href: "/contact-me",
+    href: "#contact-me",
   },
 ];
 

@@ -91,14 +91,14 @@ const PillNav: React.FC<PillNavProps> = ({
         tl.to(
           circle,
           { scale: 1.2, xPercent: -50, duration: 2, ease, overwrite: "auto" },
-          0,
+          0
         );
 
         if (label) {
           tl.to(
             label,
             { y: -(h + 8), duration: 2, ease, overwrite: "auto" },
-            0,
+            0
           );
         }
 
@@ -107,7 +107,7 @@ const PillNav: React.FC<PillNavProps> = ({
           tl.to(
             white,
             { y: 0, opacity: 1, duration: 2, ease, overwrite: "auto" },
-            0,
+            0
           );
         }
 
@@ -221,7 +221,7 @@ const PillNav: React.FC<PillNavProps> = ({
             duration: 0.3,
             ease,
             transformOrigin: "top center",
-          },
+          }
         );
       } else {
         gsap.to(menu, {
@@ -262,7 +262,7 @@ const PillNav: React.FC<PillNavProps> = ({
   } as React.CSSProperties;
 
   return (
-    <div className="z-1000 mx-auto justify-center flex">
+    <div className="z-1000">
       <nav
         className={`w-full md:w-max flex items-center justify-between md:justify-start box-border px-4 md:px-0 ${className}`}
         aria-label="Primary"

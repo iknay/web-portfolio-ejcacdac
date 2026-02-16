@@ -42,7 +42,7 @@ const WorkItems = WorksLang.map(
       >
         <h2
           className={twMerge(
-            "text-[56px] font-semibold px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2",
+            "text-[32px] font-semibold px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2",
             index === 0 && "text-7xl border-none"
           )}
           style={{ background: bgColor, color: textColor }}
@@ -66,7 +66,7 @@ const WorkItems = WorksLang.map(
                   <p
                     key={i}
                     className={twMerge(
-                      "border border-primary italic font-medium text-5xl rounded-2xl px-6 py-4 text-center w-fit",
+                      "border border-primary italic font-medium text-2xl rounded-2xl px-6 py-4 text-center w-fit",
                       index === 0 && "border-none font-archivo text-[32px]"
                     )}
                   >
@@ -78,7 +78,7 @@ const WorkItems = WorksLang.map(
         </div>
         <Link
           href={href}
-          className="flex w-full gap-4 items-center justify-center cursor-pointer text-3xl font-medium italic"
+          className="flex w-full gap-4 items-center justify-center cursor-pointer text-[32px] font-medium italic"
         >
           {index === 0 ? "Contact Me" : "Click to view"}
           <Image src={NextButton} alt="Next Button" className="size-16" />
@@ -91,7 +91,7 @@ const WorkItems = WorksLang.map(
 const Works = () => {
   return (
     <div>
-      <div className="flex flex-col gap-4 mb-12 w-full text-center">
+      <div className="flex flex-col gap-4 mb-40 w-full text-center">
         <TextPressure
           text="GALLERY"
           flex
@@ -104,22 +104,11 @@ const Works = () => {
           strokeColor="#0088FE"
           minFontSize={36}
         />
-        <p className="font-poppins font-medium text-5xl">
+        <p className="font-poppins font-medium text-3xl">
           See some of my work.
         </p>
       </div>
 
-      <div className="font-archivo text-center flex flex-col gap-8 justify-center w-full mb-16 py-20">
-        <p className="text-7xl font-semibold">Important Note!</p>
-        <p className="font-medium">
-          My most recent projects were primarily internal tools and are not
-          included in this public portfolio. <br /> I’d be happy to walk you
-          through these projects in person or through a call upon request.
-        </p>
-        <p className="font-poppins text-3xl">
-          Send me an invite at ervinjohn.cacdac@gmail.com
-        </p>
-      </div>
       <div className="grid justify-items-center gap-16">
         {WorkItems.map(({ firstContent, secondContent }, index) => (
           <PixelTransition
