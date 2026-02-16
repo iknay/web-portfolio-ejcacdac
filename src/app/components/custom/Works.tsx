@@ -1,13 +1,35 @@
 import PixelTransition from "../animations/PixelTransition";
 import { WorksLang } from "@/src/lib/Lang";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { HiSparkles } from "react-icons/hi";
 import Link from "next/link";
 import { NextButton } from "@/public/icons";
 import TextPressure from "../animations/TextPressure";
+import { twMerge } from "tailwind-merge";
+
+interface WorkItemProps {
+  title: string;
+  href: string;
+  bgColor?: string;
+  textColor?: string;
+  sparkleColor?: string;
+  img: StaticImageData;
+  details?: string[];
+}
 
 const WorkItems = WorksLang.map(
-  ({ title, href, bgColor, textColor, sparkleColor, img, details }, index) => ({
+  (
+    {
+      title,
+      href,
+      bgColor,
+      textColor,
+      sparkleColor,
+      img,
+      details,
+    }: WorkItemProps,
+    index
+  ) => ({
     firstContent: (
       <div key={index}>
         <Image src={img} alt={title} className="w-full h-auto" />
@@ -19,14 +41,16 @@ const WorkItems = WorksLang.map(
         className="flex flex-col justify-center w-full h-full items-center bg-[#111111] gap-8 font-poppins"
       >
         <h2
-          className={
-            "text-[56px] font-semibold px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2"
-          }
+          className={twMerge(
+            "text-[56px] font-semibold px-6 py-4 text-white rounded-2xl border border-white w-fit flex items-center justify-center gap-2",
+            index === 0 && "text-7xl border-none"
+          )}
           style={{ background: bgColor, color: textColor }}
         >
           <HiSparkles
             color={sparkleColor || textColor || "#FFFFFF"}
             size={24}
+            className={twMerge(index === 0 && "hidden")}
           />
           {title}
         </h2>
@@ -41,7 +65,10 @@ const WorkItems = WorksLang.map(
                 {row.map((detail, i) => (
                   <p
                     key={i}
-                    className="border border-primary italic font-medium text-5xl rounded-2xl px-6 py-4 text-center w-fit"
+                    className={twMerge(
+                      "border border-primary italic font-medium text-5xl rounded-2xl px-6 py-4 text-center w-fit",
+                      index === 0 && "border-none font-archivo text-[32px]"
+                    )}
                   >
                     {detail}
                   </p>
@@ -53,12 +80,12 @@ const WorkItems = WorksLang.map(
           href={href}
           className="flex w-full gap-4 items-center justify-center cursor-pointer text-3xl font-medium italic"
         >
-          Click to view{" "}
+          {index === 0 ? "Contact Me" : "Click to view"}
           <Image src={NextButton} alt="Next Button" className="size-16" />
         </Link>
       </div>
     ),
-  }),
+  })
 );
 
 const Works = () => {

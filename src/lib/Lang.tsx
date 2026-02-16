@@ -1,5 +1,12 @@
 import { Behance, Instagram, LinkedIn } from "@/public/icons";
-import { Athletica, Doon, Medsgo, TixGenie, TravelGuru } from "@/public/images";
+import {
+  Athletica,
+  Doon,
+  InternalProjects,
+  Medsgo,
+  TixGenie,
+  TravelGuru,
+} from "@/public/images";
 
 export const NavbarLang = [
   {
@@ -32,6 +39,12 @@ export const SocialMediaLang = [
 ];
 
 export const WorksLang = [
+  {
+    title: "Important Note!",
+    href: "#contact-me",
+    details: ["My most recent projects were primarily internal tools and are not included in this public portfolio. I’d be happy to walk you through these projects in person or through a call upon request."],
+    img: InternalProjects,
+  },
   {
     title: "Athletica - GYM Booking App",
     href: "/athletica",
