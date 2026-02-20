@@ -13,7 +13,7 @@ const DesktopOnlyWarning = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[9999] bg-background flex items-center justify-center p-8"
+          className="fixed inset-0 z-9999 bg-background flex items-center justify-center p-8 max-h-screen"
         >
           <div className="max-w-md text-center space-y-6">
             <motion.div

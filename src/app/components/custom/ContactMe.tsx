@@ -17,7 +17,7 @@ const ContactForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const value = e.target.value;
     setFormState({
@@ -35,7 +35,7 @@ const ContactForm = () => {
           process.env.NEXT_PUBLIC_SERVICE_ID as string,
           process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
           e.currentTarget,
-          process.env.NEXT_PUBLIC_USER_ID as string
+          process.env.NEXT_PUBLIC_USER_ID as string,
         )
         .then(
           () => {
@@ -54,7 +54,7 @@ const ContactForm = () => {
               variant: "destructive",
             });
             setIsLoading(false);
-          }
+          },
         );
     } else {
       toast({
@@ -65,10 +65,11 @@ const ContactForm = () => {
       setIsLoading(false);
     }
   };
+
   return (
     <div className="flex flex-col gap-24 min-h-screen">
       <h2 className="italic font-medium text-[32px] text-center">
-        Let’s Connect.
+        Let&apos;s Connect.
       </h2>
       <div className="flex w-full justify-between h-full gap-32">
         <form
