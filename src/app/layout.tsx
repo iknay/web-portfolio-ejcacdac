@@ -3,6 +3,7 @@ import { Archivo, Poppins } from "next/font/google";
 import "./globals.css";
 import { ViewportProvider } from "./providers/ViewportProvider";
 import DesktopOnlyWarning from "./components/custom/DesktopOnlyWarning";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -27,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       <body
         className={`${archivo.variable} ${poppins.variable} font-poppins antialiased`}
       >
